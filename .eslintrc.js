@@ -15,5 +15,7 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 0,
+    'comma-dangle': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
   },
 };
