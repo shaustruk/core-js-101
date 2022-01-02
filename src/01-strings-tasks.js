@@ -222,19 +222,7 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-  let char;
-  let charRes;
-  for (let i = 0; i < 5; i += 1) {
-    char = str.charCodeAt(i);
-    if (char > 109) {
-      charRes = char - 13;
-    } else {
-      charRes = char + 13;
-    }
-
-    console.log(charRes);
-    // console.log(charRes);
-  }
+  return str;
 }
 
 /**
