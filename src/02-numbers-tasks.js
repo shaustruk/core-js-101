@@ -69,10 +69,11 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  const numFirst = (x2 - x1) * (x2 - x1);
+  const numSecond = (y2 - y1) * (y2 - y1);
+  return Math.sqrt(numFirst + numSecond);
 }
-
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
  *
@@ -85,15 +86,16 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  const x = -b / a;
+  return x;
 }
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
  * See details https://en.wikipedia.org/wiki/Euclidean_vector#Representations
- *
+ * !!!TODO!!!
  * @param {number} x1
  * @param {number} y1
  * @param {number} x2
@@ -107,8 +109,12 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const scalar = x1 * x2 + y1 * y2;
+  const modulA = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const modulB = Math.sqrt(x2 * x2 + y2 * y2);
+  const cos = scalar / (Math.abs(modulA) * Math.abs(modulB));
+  return Math.acos(cos);
 }
 
 /**
